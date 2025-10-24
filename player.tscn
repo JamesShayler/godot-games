@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm35ijtsn6dqb"]
+
+[ext_resource type="Texture2D" uid="uid://daxnxf40ondi5" path="res://OIP-764580080.jpeg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dr0xrvoxjhwav" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dw4o2xb2qy0eh" path="res://54px-Needle_1_Needle.png" id="2_i3pqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(92, 108)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+particle_texture = ExtResource("2_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_4flbx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -128)
