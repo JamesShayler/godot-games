@@ -27,3 +27,20 @@ texture = ExtResource("3_i3pqv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -128)
+limit_enabled = false
+limit_smoothed = true
+
+[node name="Control" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -965.0
+offset_top = -539.0
+offset_right = -925.0
+offset_bottom = -499.0
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D/Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 26.0
+offset_right = 126.0
+offset_bottom = 66.0

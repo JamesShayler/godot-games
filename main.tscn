@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ptvtscojclko"]
+[gd_scene load_steps=4 format=3 uid="uid://ptvtscojclko"]
 
 [ext_resource type="PackedScene" uid="uid://cm35ijtsn6dqb" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://eak3tgs12m8o" path="res://mossgrub.tscn" id="2_0xm2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h2yge"]
 size = Vector2(1000, 104)
@@ -23,4 +24,13 @@ offset_left = -501.0
 offset_top = -52.0
 offset_right = 499.0
 offset_bottom = 52.0
-color = Color(1.6845763e-07, 0.41741818, 0.17748857, 1)
+color = Color(0, 0.41568628, 0.1764706, 1)
+
+[node name="Mossgrub" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(439, 564)
+
+[node name="LeftMax" type="Node2D" parent="Mossgrub"]
+position = Vector2(-200, 0)
+
+[node name="RightMax" type="Node2D" parent="Mossgrub"]
+position = Vector2(200, 0)

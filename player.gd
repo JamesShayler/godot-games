@@ -5,11 +5,13 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 var down = false
 var hop = 0
+var silk = 100
 @export var particle_texture = Texture
 @export var BIND_PARTICLE = Texture
 @onready var sprite = $Sprite2D
 @onready var camera = $Camera2D
 @onready var cameraLastPos = Vector2.ZERO
+@onready var silkBar = $Camera2D/Control/ColorRect
 
 var binding = 0.0
 var bind_particles: CPUParticles2D
@@ -29,11 +31,11 @@ func _ready():
 	add_child(bind_particles)
 
 func _physics_process(delta: float) -> void:
-	
-	if Input.is_action_just_pressed("bind"):
+	if Input.is_action_just_pressed("bind") and silk >= 100:
+		silk -= 100
 		binding = 0.01  # Start timer (non-zero so it counts)
 		bind_particles.emitting = true
-
+	silkBar.size.x = silk
 	if binding > 0:
 		velocity = Vector2.ZERO
 		binding += delta
